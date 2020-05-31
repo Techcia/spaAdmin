@@ -1,0 +1,25 @@
+// Import Fuse core library
+@import "@fuse/scss/core";
+
+// Import app.theme.scss
+@import "app/app.theme";
+
+
+
+.container {
+    max-width: 100%!important;
+    margin: 0!important;
+    padding: 0!important;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+.btn {
+    font-size: 16px!important;
+}
+
+body.theme-default .accent {
+    background-color: transparent!important;
+}

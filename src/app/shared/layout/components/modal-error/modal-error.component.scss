@@ -1,0 +1,24 @@
+.fullwidth {
+  width: 800px;
+  position: relative;
+  .closei {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 999;
+  }
+  .itens {
+    padding: 20px 0px;
+  }
+
+  .icon-span {
+    position: relative;
+    margin-right: 40px;
+    .icon {
+      font-size: 30px;
+      position: absolute;
+      top: 2px;
+    }
+  }
+}

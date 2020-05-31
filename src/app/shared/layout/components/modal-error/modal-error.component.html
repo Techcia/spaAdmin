@@ -1,0 +1,31 @@
+<div class="p-26 fullwidth">
+    <a class="closei" (click)="close()">
+        <mat-icon>close</mat-icon>
+    </a>
+    <div class="row p-3">
+        <div class="col">
+            <h1>
+                <span class="icon-span">
+                    <mat-icon class="icon text-danger">error_outline</mat-icon>
+                </span>
+
+                {{data.title}}</h1>
+        </div>
+    </div>
+    <hr>
+    <div class="p-3">
+        <div class="row">
+            <div class="col">
+                <h2 class="font-weight-bold">{{data.message}}</h2><br>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="p-3">
+        <div class="row">
+            <div class="col">
+                <button mat-raised-button color="accent" (click)="close()">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

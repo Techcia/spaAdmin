@@ -1,0 +1,140 @@
+<div class="imagem2"></div>
+<div class = "banner"></div>
+
+<div id="company" class="page-layout carded fullwidth inner-scroll">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg accent"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- CENTER -->
+    <div class="center new">
+
+        <!-- HEADER -->
+        <div class="header accent" fxLayout="row" fxLayoutAlign="space-between center">
+
+            <!-- APP TITLE -->
+            <div class="row">
+                <div class="col-sm-1">
+                    <div class="mt-26 mb-18">
+                        <button mat-icon-button class="mr-0 mr-sm-16" [routerLink]="'/company/list'">
+                            <mat-icon>arrow_back</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-sm-5 p-3">
+                    <div class="mt-26 mb-18" class="perfil" fxLayout="column" fxLayoutAlign="start start"
+                        [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
+                    </div>
+                </div>
+
+                <!-- / APP TITLE -->
+                <div class="col-sm-6 text-right p-3">
+                    <div class="mt-26 mb-18">
+                        <button mat-raised-button class="save-company-button" [disabled]="companyForm.invalid || loading"
+                            (click)="createCompany()">
+                            <span>Salvar</span>
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status"
+                            aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / HEADER -->
+
+        <!-- CONTENT CARD -->
+        <div class="content-card">
+            <!-- CONTENT -->
+            <div class="content">
+                <form [formGroup]="companyForm" class="company w-100-p" fxLayout="column" fxFlex>
+                    <mat-tab-group>
+                        <mat-tab label="Informações básicas">
+                            <div class="tab-content p-24" fusePerfectScrollbar>
+                                <div class="row form-group">
+                                    <div class="col">
+                                        <h3>Dados</h3>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-6">
+                                        <mat-form-field floatLabel="always" appearance="outline" class="w-100-p">
+                                            <mat-label>Nome da empresa</mat-label>
+                                            <input matInput placeholder="Nome da empresa" name="name"
+                                                formControlName="name" required>
+                                            <mat-error>O nome é obrigatório</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field floatLabel="always" appearance="outline" class="w-100-p">
+                                            <mat-label>Nome Fantasia</mat-label>
+                                            <input matInput placeholder="Nome Fantasia" name="tradeName"
+                                                formControlName="tradeName" required>
+                                            <mat-error>O nome é obrigatório</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-6">
+                                        <mat-form-field floatLabel="always" appearance="outline" class="w-100-p">
+                                            <mat-label>Email</mat-label>
+                                            <input matInput placeholder="Email da empresa" name="email"
+                                                formControlName="email" required>
+                                            <mat-error>O Email é obrigatório</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field floatLabel="always" appearance="outline" class="w-100-p">
+                                            <mat-label>CNPJ</mat-label>
+                                            <input matInput placeholder="CNPJ" name="document" formControlName="document"
+                                                required>
+                                            <mat-error>O CNPJ é obrigatória</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col">
+                                        <mat-form-field floatLabel="always" appearance="outline" class="w-100-p">
+                                            <mat-label>Senha</mat-label>
+                                            <input type="password" matInput placeholder="Senha" name="password"
+                                                formControlName="password" required>
+                                            <mat-error *ngIf="companyForm.controls.password.hasError('required')">A senha é obrigatória
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col">
+                                        <mat-form-field floatLabel="always" appearance="outline" class="w-100-p">
+                                            <mat-label>Confirmar Senha</mat-label>
+                                            <input type="password" matInput placeholder="Confirmar Senha"
+                                                name="confirmPassword" formControlName="confirmPassword" required>
+                                            <mat-error *ngIf="companyForm.controls.confirmPassword.hasError('required')">A confirmação é
+                                                obrigatória
+                                            </mat-error>
+                                            <mat-error *ngIf="companyForm.controls.confirmPassword.hasError('mustMatch')">As senhas não
+                                                conferem
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col">
+                                        <button mat-raised-button color="accent" class="save-company-button"
+                                            [disabled]="companyForm.invalid || loading" (click)="createCompany()">
+                                            <span>Salvar</span>
+                                            <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status"
+                                            aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </form>
+            </div>
+            <!-- / CONTENT -->
+        </div>
+        <!-- / CONTENT CARD -->
+    </div>
+    <!-- / CENTER -->
+</div>
+<br><br>

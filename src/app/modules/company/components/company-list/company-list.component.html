@@ -1,0 +1,124 @@
+<div class="imagem"></div>
+<div class = "banner"></div>
+  <div id="company" class="page-layout carded fullwidth inner-scroll">
+
+    <!-- TOP BACKGROUND -->
+    <!--<div class="top-bg accent"></div>-->
+    <!-- / TOP BACKGROUND -->
+    
+    
+    <!-- CENTER -->
+    <div class="center list">
+
+        <!-- HEADER -->
+        <div class="header accent" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row"
+            fxLayoutAlign.gt-sm="space-between center">
+
+            <!-- SEARCH -->
+            <div class="row field">
+                <div class="col-md-4 col-sm-12">
+                    <!-- APP TITLE -->
+                    <div class="logo mt-26 mb-18 mb-md-0" fxLayout="row" class="estacionamento1" fxLayoutAlign="start center">
+                        <mat-icon class="logo-icon s-32 mr-16"
+                            [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
+                            
+                        </mat-icon>
+
+                    </div>
+                    <!-- / APP TITLE -->
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="search-wrapper mt-26 mb-18">
+                        <div class="search" fxFlex fxLayout="row" fxLayoutAlign="start center">
+                            <mat-icon>search</mat-icon>
+                            <input #filter placeholder="Procurar Empresa">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-12 text-right">
+                    <!-- ADD BUTTON -->
+                    <!--<button routerLink="/company/create" class="button">
+                        
+                    </button>-->
+                    <a mat-raised-button routerLink="/company/create"
+                    class="add-company-button fuse-white mt-26 mb-18">
+                    <span>Adicionar Empresa</span>
+                </a>
+                    <!-- / ADD BUTTON -->
+                </div>
+            </div>
+
+            <!-- / SEARCH -->
+
+
+
+        </div>
+        <!-- / HEADER -->
+
+        <!-- CONTENT CARD -->
+        <div class="content-card">
+
+            <mat-table class="companys-table" #table [dataSource]="dataSource" matSort [@animateStagger]="{value:'50'}"
+                fusePerfectScrollbar>
+
+                <!-- ID Column -->
+                <ng-container matColumnDef="id">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
+                    <mat-cell *matCellDef="let company">
+                        <p class="text-truncate">{{company.id}}</p>
+                    </mat-cell>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Nome</mat-header-cell>
+                    <mat-cell *matCellDef="let company">
+                        <p class="text-truncate">{{company.name}}</p>
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="email">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+                    <mat-cell *matCellDef="let company">
+                        <p class="text-truncate">{{company.email}}</p>
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="document">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>CNPJ</mat-header-cell>
+                    <mat-cell *matCellDef="let company">
+                        <p class="text-truncate">{{company.document}}</p>
+                    </mat-cell>
+                </ng-container>
+
+
+                <!-- action Column -->
+                <ng-container matColumnDef="action">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Ação</mat-header-cell>
+                    <mat-cell *matCellDef="let company" fxHide fxShow.gt-xs>
+                        <a routerLink="/company/edit/{{company.id}}">
+                            <mat-icon class="edit s-24" routerLinkActive="router-link-active">edit</mat-icon>
+                        </a>
+                        <a class="cursor" (click)="deleteCompany(company)">
+                            <mat-icon class="delete s-24" routerLinkActive="router-link-active">delete</mat-icon>
+                        </a>
+                    </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></mat-header-row>
+
+                <mat-row *matRowDef="let company; columns: displayedColumns;" class="company" matRipple>
+                </mat-row>
+            </mat-table>
+
+            <mat-paginator #paginator [length]="dataSource.filteredData.length" [pageIndex]="0" [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 25, 100]">
+            </mat-paginator>
+
+        </div>
+        <!-- / CONTENT CARD -->
+    </div>
+    <!-- / CENTER -->
+   
+</div>
