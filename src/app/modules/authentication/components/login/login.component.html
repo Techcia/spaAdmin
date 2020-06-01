@@ -5,7 +5,7 @@
         <div id="login-form" [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">
 
             <div class="logo">
-                <img class="logo" src="assets/images/logos/logoEmpresa.svg">
+                <img class="logo" src="assets/images/logos/logoAdmin.svg">
             </div>
 
             <div [hidden]="!loginInvalid" class="text-danger message-error">Usuário ou senha inválido</div>
@@ -15,7 +15,7 @@
                 <mat-form-field appearance="outline">
                     <mat-label>Usuário</mat-label>
                     <input matInput formControlName="username">
-                    <mat-icon matSuffix class="secondary-text">mail</mat-icon>
+                    <mat-icon matSuffix class="secondary-text">person</mat-icon>
                     <mat-error *ngIf="loginForm.get('username').hasError('required')">
                         O usuário é obrigatório
                     </mat-error>
