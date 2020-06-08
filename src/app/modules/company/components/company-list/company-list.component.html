@@ -78,7 +78,7 @@
                     </mat-cell>
                 </ng-container>
 
-                <ng-container matColumnDef="email">
+                <ng-container matColumnDef="email"> 
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
                     <mat-cell *matCellDef="let company">
                         <p class="text-truncate">{{company.email}}</p>
@@ -88,7 +88,7 @@
                 <ng-container matColumnDef="document">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>CNPJ</mat-header-cell>
                     <mat-cell *matCellDef="let company">
-                        <p class="text-truncate">{{company.document}}</p>
+                        <p class="text-truncate">{{company.document | mask: '00.000.000/0000-00'}}</p>
                     </mat-cell>
                 </ng-container>
 

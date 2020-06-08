@@ -26,6 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FuseConfirmDialogModule, FuseSidebarModule } from '@fuse/components';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { AngularValidateBrLibModule } from 'angular-validate-br';
+
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
@@ -51,6 +53,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     FuseSidebarModule,
     MatDialogModule,
     NgxMaskModule.forRoot(options),
+    AngularValidateBrLibModule
   ],
   providers: [
     CompanyService,

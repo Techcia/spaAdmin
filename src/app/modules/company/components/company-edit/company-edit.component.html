@@ -18,7 +18,7 @@
                 <div class="col-sm-1">
                     <div class="mt-26 mb-18">
                         <button mat-icon-button class="mr-0 mr-sm-16" [routerLink]="'/company/list'">
-                            <mat-icon>arrow_back</mat-icon>
+                            <mat-icon class="voltar">arrow_back</mat-icon>
                         </button>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                                     <div class="col-6">
                                         <mat-form-field floatLabel="always" appearance="outline" class="w-100-p">
                                             <mat-label>CNPJ</mat-label>
-                                            <input matInput placeholder="CNPJ" name="document" formControlName="document"
+                                            <input mask="00.000.000/0000-00" matInput placeholder="CNPJ" name="document" formControlName="document"
                                                 required>
                                             <mat-error>O CNPJ é obrigatória</mat-error>
                                         </mat-form-field>

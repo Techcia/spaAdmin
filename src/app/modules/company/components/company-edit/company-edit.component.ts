@@ -5,6 +5,7 @@ import { finalize } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material';
 import { CompanyService } from '../../services/company.service';
 import { Router } from '@angular/router';
+import { ValidateBrService } from 'angular-validate-br';
 
 @Component({
   selector: 'app-company-edit',
@@ -18,7 +19,7 @@ export class CompanyEditComponent implements OnInit {
     id: [0, [Validators.required]],
     name: ['', [Validators.required]],
     email: ['', [Validators.required]],
-    document: ['', [Validators.required]],
+    document: ['', [Validators.required, this.validateBrService.cnpj]],
     tradeName: ['', [Validators.required]],
   });
   loading: boolean = false;
@@ -26,7 +27,8 @@ export class CompanyEditComponent implements OnInit {
     private _formBuilder: FormBuilder,
     private companyService: CompanyService,
     private _snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private validateBrService: ValidateBrService
 
   ) {
   }
