@@ -47,7 +47,7 @@ export class CompanyEditComponent implements OnInit {
   editCompany() {
     this.loading = true;
     this.companyService.editCompany(this.companyForm.value).pipe(finalize(() => this.loading = false)).subscribe(res => {
-      this._snackBar.open("Empresa editado com sucesso", "Fechar", {
+      this._snackBar.open("Empresa editada com sucesso", "Fechar", {
         duration: 2000,
       }).afterDismissed().subscribe(res => {
         this.router.navigateByUrl('/company/list');

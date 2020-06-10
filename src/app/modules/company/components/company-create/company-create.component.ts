@@ -42,7 +42,7 @@ export class CompanyCreateComponent implements OnInit {
   createCompany() {
     this.loading = true;
     this.companyService.createCompany(this.companyForm.value).pipe(finalize(() => this.loading = false)).subscribe(res => {
-      this._snackBar.open("Empresa criado com sucesso", "Fechar", {
+      this._snackBar.open("Empresa criada com sucesso", "Fechar", {
         duration: 2000,
       }).afterDismissed().subscribe(res => {
         this.router.navigateByUrl('/company/list');

@@ -31,7 +31,7 @@
                 <!-- / APP TITLE -->
                 <div class="col-sm-6 text-right p-3">
                     <div class="mt-26 mb-18">
-                        <button mat-raised-button class="save-company-button" [disabled]="companyForm.invalid || loading"
+                        <button mat-raised-button class="save-company-button  filter-btn" [disabled]="companyForm.invalid || loading"
                             (click)="createCompany()">
                             <span>Salvar</span>
                             <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status"

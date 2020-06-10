@@ -4,26 +4,55 @@ app-company-list {
     width: 100%;
     height: 100%;
     padding-bottom: 20px;
-    //background: url("../../../../../assets/images/backgrounds/EstacionamentoFINAL.svg") no-repeat !important;
-    //background: #0000ff;
-    //background: -moz-linear-gradient(left,  #8dd2fd 0%, #8dd2fd 50%, #0000ff 100%) !important; 
-   // background: -webkit-gradient(linear, left top, right top, color-stop(0%,#0000ff), color-stop(50%,#0000ff), color-stop(100%,#0000ff)) !important; 
-   // background: -webkit-linear-gradient(left,  #8dd2fd 0%,#8dd2fd 50%,#0000ff 100%) !important; 
-    //background: -o-linear-gradient(left,  #8dd2fd 0%,#8dd2fd 50%,#0000ff 100%) !important; 
-   // background: -ms-linear-gradient(left,  #8dd2fd 0%,#8dd2fd 50%,#0000ff 100%) !important; 
-   // background: linear-gradient(to right,  #8dd2fd 0%,#8dd2fd 50%,#0000ff 100%) !important;
-    #company {
-        .list {
+    background: url("../../../../../assets/images/backgrounds/EstacionamentoFINAL.svg");
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position: right bottom;
+    .row{
+        width: 100%;
+    }
+    .filter {
+        width: 100%!important;
+        max-width: 80%!important;
+    }
+    .parkings {
+        width: 100%;
+        .banner-imgaa {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+            margin-bottom: 20px !important;
+        }
+        .content-card {
             width: 100%;
             max-width: 80%;
             margin: 0 auto;
-            
+            padding-top: 20px;
+            padding-bottom: 20px;
+            .row {
+                width: 100%;
+                background-color: #fff;
+            }
+        }
+        .filter {
+            width: 100%;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        .filter-btn {
+            background-color: #1b447a !important;
+            border: 2px solid #1b447a !important;
+            color: #fff !important;
+            margin-top: 14px !important;
+            margin-right: 10px;
         }
 
-        .top-bg {
-            @include media-breakpoint("lt-md") {
-                height: 256px;
-            }
+        mat-spinner {
+            position: fixed;
+            top: 45%;
+            left: 45%;
+            z-index: 999999;
         }
 
         .edit {
@@ -34,172 +63,6 @@ app-company-list {
         .delete {
             color: #dc3545 !important;
         }
-
-        .cursor {
-            cursor: pointer;
-        }
-
-        > .center {
-            > .header {
-                .field {
-                    padding-top: 40px !important;
-                    padding-bottom: 40px !important;
-                }
-                .search-wrapper {
-                    width: 70%;
-                    max-width: 200px;
-                    border-radius: 28px;
-                    overflow: hidden;
-                    margin-top: 44px;
-                    
-                    @include mat-elevation(1);
-
-                    @include media-breakpoint("xs") {
-                        width: 100%;
-                    }
-
-                    .search {
-                        width: 100%;
-                        height: 48px;
-                        line-height: 48px;
-                        padding: 0 18px;
-                        background-color: #fff;
-                        mat-icon {
-                            color: #000;
-                            margin-top: 13px;
-                        }
-                        input {
-                            width: 76%;
-                            height: 48px;
-                            min-height: 48px;
-                            max-height: 48px;
-                            padding: 0 16px;
-                            border: none;
-                            outline: none;
-                            position: absolute;
-                            border-radius: 0px 30px 30px 0px;
-                        }
-                    }
-                }
-
-                @include media-breakpoint("lt-md") {
-                    padding: 8px 0;
-                    height: 192px !important;
-                    min-height: 192px !important;
-                    max-height: 192px !important;
-                }
-            }
-        }
     }
-
-    //.button{
-    //    background: url("../../../../../assets/images/logos/Adicionar\ Estacionamento.svg")no-repeat;
-    //    width: 69%;
-    //    height: 90%;
-    //    left: 50px;
-    //    padding-bottom: 20px;
-    //    padding-left: 30%;
-    //    border: transparent;
-
-    //}
-
-    .estacionamento1{
-
-        background: url("../../../../../assets/images/logos/Empresa.svg") no-repeat !important;
-        width: 46%;
-        height: 100%;
-        margin-top: 35px;
-
-
-    }
-
-    .products-table {
-        flex: 1 1 auto;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-        overflow: auto;
-        -webkit-overflow-scrolling: touch;
-
-        .mat-header-row {
-            min-height: 64px;
-        }
-
-        .product {
-            position: relative;
-            cursor: pointer;
-            height: 84px;
-        }
-
-        .mat-cell {
-            min-width: 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .mat-column-id {
-            flex: 0 1 84px;
-        }
-
-        .mat-column-image {
-            flex: 0 1 84px;
-
-            .product-image {
-                width: 52px;
-                height: 52px;
-                border: 1px solid rgba(0, 0, 0, 0.12);
-            }
-        }
-
-        .mat-column-category {
-            flex: 0 1 240px;
-        }
-
-        .mat-column-price {
-            flex: 0 1 160px;
-        }
-
-        .mat-column-quantity {
-            flex: 0 1 160px;
-        }
-
-        .mat-column-active {
-            flex: 0 1 80px;
-        }
-
-        .quantity-indicator {
-            display: inline-block;
-            vertical-align: middle;
-            width: 8px;
-            height: 8px;
-            border-radius: 4px;
-            margin-right: 8px;
-
-            & + span {
-                display: inline-block;
-                vertical-align: middle;
-            }
-        }
-
-        .active-icon {
-            border-radius: 50%;
-        }
-    }
+    
 }
-
-.imagem{
-    width: 15%;
-    height: 100%;
-    left: 1330px !important; 
-    padding-bottom: 50%;
-    position: absolute;
-    margin-top: 240px !important;
-    background: url("../../../../../assets/images/backgrounds/EstacionamentoFINAL.svg") no-repeat !important;
-}
-
-.banner{
-    background: url("../../../../../assets/images/logos/banner.svg") no-repeat !important;
-    position: absolute;
-    width:100%;
-    height: 100%;
-    padding-bottom: 200%;
-    margin-top: 0px !important;
-  }
